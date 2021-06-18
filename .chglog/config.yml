@@ -1,0 +1,37 @@
+style: github
+template: CHANGELOG.tpl.md
+info:
+  title: CHANGELOG
+  repository_url: https://github.com/commitdev/terraform-aws-https-redirect
+options:
+  commits:
+    filters:
+      Type:
+        - feat
+        - enhancement
+        - fix
+        - improvement
+        - docs
+        - refactor
+        - test
+        - ci
+        - breaking
+  commit_groups:
+    group_by: Type
+    sort_by: Type
+    title_maps:
+      feat: New Features
+      fix: Bug Fixes
+      improvement: Enhancements
+      enhancement: Enhancements
+      docs: Documentation
+      refactor: Refactoring
+      ci: CI / Testing
+  header:
+    pattern: "^(\\w*)\\:\\s(.*)$"
+    pattern_maps:
+      - Type
+      - Subject
+  notes:
+    keywords:
+      - BREAKING CHANGE
