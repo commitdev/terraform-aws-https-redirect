@@ -18,7 +18,7 @@ module "cert" {
 resource "aws_s3_bucket" "redirect" {
   // Our bucket's name is going to be the same as our site's domain name.
   bucket = var.domain_name
-  acl    = "public-read"
+  acl    = "private"
 
   website {
     redirect_all_requests_to = var.redirect_target_url
