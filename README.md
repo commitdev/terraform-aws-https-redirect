@@ -75,9 +75,10 @@ module "redirect" {
 |------|-------------|------|---------|:--------:|
 | domain\_aliases | Alternative names (aliases) to allow | `list(string)` | `[]` | no |
 | domain\_name | Domain to provide the redirect including subdomain if applicable | `string` | n/a | yes |
-| existing\_cert\_arn | Provide a ACM certificate ARN if you don't want a new one to be created - must be in the us-east-1 region | `string` | `""` | no |
+| existing\_cert\_arn | The ARN of an ACM cert that already exists - must be in the us-east-1 region | `string` | `""` | no |
 | redirect\_target\_url | Redirect target - should be a full URL. If http:// or https:// is excluded, the scheme of the request will be used | `string` | n/a | yes |
 | tags | Tags to apply to created resources | `map(string)` | `{}` | no |
+| use\_existing\_cert | Set to true to use an existing cert | `bool` | `false` | no |
 | zone\_name | Domain name of the Route53 hosted zone | `string` | n/a | yes |
 
 ## Outputs

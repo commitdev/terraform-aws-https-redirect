@@ -19,8 +19,14 @@ variable "redirect_target_url" {
   type        = string
 }
 
+# Required so we don't run into the problem where terraform can't plan because it depends on resources that haven't been created yet
+variable "use_existing_cert" {
+  description = "Set to true to use an existing cert"
+  type        = bool
+  default     = false
+}
 variable "existing_cert_arn" {
-  description = "Provide a ACM certificate ARN if you don't want a new one to be created - must be in the us-east-1 region"
+  description = "The ARN of an ACM cert that already exists - must be in the us-east-1 region"
   type        = string
   default     = ""
 }

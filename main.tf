@@ -7,7 +7,7 @@ locals {
 module "cert" {
   source  = "commitdev/zero/aws//modules/certificate"
   version = "0.1.0"
-  count   = var.existing_cert_arn == "" ? 1 : 0
+  count   = var.use_existing_cert ? 0 : 1
 
   zone_name         = var.zone_name
   domain_name       = var.domain_name
